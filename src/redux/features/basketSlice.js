@@ -25,21 +25,21 @@ const basketSlice=createSlice({
             if(item && item.amount !==0){
                 item.amount-=1
                 state.amount-=1
-                if(state.amount===0){
-                    state.total=0
-                }
-                else{
-                    state.total-=item.price
-                }
+                state.total-=item.price
+    
             }
         },
         remove:(state, {payload})=>{
             const item=state.products.find((glass) => glass.id ===payload)
             state.total -=item.amount*item.price
+            state.amount -=item.amount
             state.products = state.products.filter((item) => {
              if(item.id !==payload){
                 return item
              }
+             if(state.amount == 0){
+                state.total=0
+            }
              })
         },
     }

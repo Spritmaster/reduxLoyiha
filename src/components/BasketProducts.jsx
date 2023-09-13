@@ -8,7 +8,7 @@ const BasketProducts = () => {
     const umumiyNarx=totalPrice >0?totalPrice.toFixed(2):totalPrice
     console.log(products);
     return (
-        <div className='max-w-[1000px] mx-[auto]'>
+        <div className='max-w-[1000px] mx-[auto] mt-[2rem]'>
             {products && products.map((item) => {
                 const { name, price, image, amount ,id } = item
                 return (
@@ -24,8 +24,8 @@ const BasketProducts = () => {
             })}
 
             <div className='flex justify-between'>
-                <h1 className='text-[2rem] font-semibold'>Total</h1>  
-                <p className='text-[2rem]'>${umumiyNarx}</p></div>
+                <h1 className='text-[2rem] font-semibold text-[#fff]'>Total</h1>  
+                <p className='text-[2rem] text-[#ffae3d] '>${umumiyNarx}</p></div>
         </div>
     )
 }
